@@ -10,9 +10,19 @@ import type { Props } from './';
 const classnameDefault = 'ui-Media';
 
 export const Media = <T extends ElementType>(props: Props<T>) => {
-  const { as = 'div', className, media, title, description, ...restProps } = props;
+  const {
+    as = 'div',
+    className,
+    variant = 'default',
+    media,
+    title,
+    description,
+    ...restProps
+  } = props;
 
-  const modifiers = {};
+  const modifiers = {
+    variant: styles[`variant-${variant}`],
+  };
 
   const classname = createClassName({
     styles,

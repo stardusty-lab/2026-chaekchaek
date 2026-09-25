@@ -9,16 +9,22 @@ import DummyImg from '../ImgBox/imgs/dummy.png';
 const meta = {
   title: 'Media/Media',
   component: Media,
+  args: {
+    variant: 'default',
+    media: <ImgBox img={DummyImg} size="large" />,
+    title: '마션',
+    description: '앤디 위어',
+  },
+  argTypes: {
+    variant: {
+      control: 'inline-radio',
+      options: ['default'],
+    },
+  },
 } satisfies Meta<typeof Media>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Example: Story = {
-  args: {
-    media: <ImgBox img={DummyImg} size="large" />,
-    title: '마션',
-    description: '앤디 위어',
-  },
-};
+export const VariantDefault: Story = {};
