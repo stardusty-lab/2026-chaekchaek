@@ -8,7 +8,7 @@
 
 .variant-default {
   width: 200px;
-  height: 313px;
+  min-height: 313px;
   padding: 24px 50px;
   background-color: #f7f2ec;
 }
