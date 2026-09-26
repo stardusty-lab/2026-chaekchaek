@@ -54,6 +54,9 @@ export type { Props as ShellProps } from './components/Shell';
 export { Split } from './components/Split';
 export type { Props as SplitProps } from './components/Split';
 
+export { ContentArea } from './components/ContentArea';
+export type { Props as ContentAreaProps } from './components/ContentArea';
+
 export { Surface } from './components/Surface';
 export type { Props as SurfaceProps } from './components/Surface';
 
