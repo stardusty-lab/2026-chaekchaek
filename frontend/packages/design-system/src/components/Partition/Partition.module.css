@@ -1,0 +1,20 @@
+.ui-Partition {
+  display: flex;
+  align-items: stretch;
+}
+
+.ui-Partition.direction-horizontal {
+  flex-direction: row;
+}
+
+.ui-Partition.direction-vertical {
+  flex-direction: column;
+}
+
+.ui-Partition-Item {
+  display: flex;
+}
+
+.ui-Partition-Item > * {
+  flex: 1;
+}
