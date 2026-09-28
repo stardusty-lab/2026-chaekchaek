@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: chaekchaek
+  datasource:
+    url: jdbc:h2:mem:chaekchaek;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: test-client-id
+            client-secret: test-client-secret
+
+aladin:
+  base-url: http://localhost:8080
+  ttb-key: test-ttb-key
+
+yes24:
+  base-url: http://localhost:8080
+  api-key: test-yes24-api-key
+
+app:
+  frontend:
+    base-url: http://localhost:3000
+    local-base-url: http://localhost:3000
+    dev-base-url: https://dev.chaekchaek.com
+    allowed-origins: https://chaekchaek.com, https://dev.chaekchaek.com, http://localhost:3000
+    oauth-success-path: /oauth/callback
+    oauth-failure-path: /login
+
+  auth:
+    access-token:
+      issuer: chaekchaek
+      secret: MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY=
+      expiration: 30m
+
+    guest-token:
+      expiration: 90d
+      refresh-window: 14d
+
+    google-id-token:
+      issuer: https://accounts.google.com
+      jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+      audience: test-client-id
+
+    apple:
+      issuer: https://appleid.apple.com
+      jwk-set-uri: https://appleid.apple.com/auth/keys
+      client-id: com.chaekchaek.test
+      team-id: TESTTEAMID
+      key-id: TESTKEYID
+      private-key: test-private-key
+      token-uri: https://appleid.apple.com/auth/token
+      revoke-uri: https://appleid.apple.com/auth/revoke

@@ -1,0 +1,25 @@
+package com.chaekchaek.book.dto;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+public record BookDetailResponse(
+        Long bookId,
+        String isbn13,
+        String title,
+        String coverImageUrl,
+        String description,
+        List<String> authors,
+        List<String> translators,
+        String publisher,
+        String category,
+        String publishedDate,
+        Integer totalPages,
+        Integer reviewCount,
+        Integer replyCount,
+        BigDecimal averageRating,
+        Integer ratingCount,
+        Integer myRatingCount,
+        BookMyRecordResponse myRecord
+) {
+}

@@ -1,0 +1,86 @@
+server:
+  forward-headers-strategy: framework
+
+management:
+  server:
+    port: 9090
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+spring:
+  application:
+    name: chaekchaek
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            scope:
+              - openid
+              - profile
+              - email
+
+aladin:
+  base-url: https://www.aladin.co.kr
+  ttb-key: ${ALADIN_TTB_KEY}
+
+yes24:
+  base-url: https://apis.yes24.com
+  api-key: ${YES24_API_KEY}
+
+app:
+  frontend:
+    base-url: ${FRONTEND_BASE_URL:http://localhost:3000}
+    local-base-url: ${FRONTEND_LOCAL_BASE_URL:http://localhost:3000}
+    dev-base-url: ${FRONTEND_DEV_BASE_URL:https://dev.chaekchaek.com}
+    allowed-origins: ${FRONTEND_ALLOWED_ORIGINS:http://localhost:3000,http://43.203.240.201,https://dev.chaekchaek.com}
+    oauth-success-path: /oauth/callback
+    oauth-failure-path: /login
+
+  auth:
+    access-token:
+      issuer: chaekchaek
+      secret: ${JWT_SECRET}
+      expiration: 5m
+
+    refresh-token:
+      expiration: 14d
+
+    guest-token:
+      expiration: ${GUEST_TOKEN_EXPIRATION:90d}
+      refresh-window: ${GUEST_TOKEN_REFRESH_WINDOW:14d}
+
+    cookie:
+      secure: ${AUTH_COOKIE_SECURE:false}
+      same-site: ${AUTH_COOKIE_SAME_SITE:Lax}
+
+    google-id-token:
+      issuer: https://accounts.google.com
+      jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+      audience: ${GOOGLE_CLIENT_ID}
+
+    apple:
+      issuer: https://appleid.apple.com
+      jwk-set-uri: https://appleid.apple.com/auth/keys
+      client-id: ${APPLE_CLIENT_ID}
+      team-id: ${APPLE_TEAM_ID}
+      key-id: ${APPLE_KEY_ID}
+      private-key: ${APPLE_PRIVATE_KEY}
+      token-uri: https://appleid.apple.com/auth/token
+      revoke-uri: https://appleid.apple.com/auth/revoke
