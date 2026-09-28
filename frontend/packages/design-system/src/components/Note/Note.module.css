@@ -24,6 +24,12 @@
   padding-bottom: 4px;
 }
 
+.variant-default {
+  border-left-color: #a3a09c;
+  background-color: #efeeec;
+  color: #1a1a1a;
+}
+
 .variant-subtle {
   border-left-color: #1A1A1A;
   background-color: #F0ECE5;
