@@ -81,6 +81,7 @@ export const WriteReviewDialog = ({
         track('review_submit', {
           actor_type: user.actorType,
           actor_id: user.actorId,
+          isbn,
         });
       }
     } else {
@@ -98,6 +99,7 @@ export const WriteReviewDialog = ({
       track('review_submit', {
         actor_type: guest.actorType,
         actor_id: guest.actorId,
+        isbn,
       });
     }
 

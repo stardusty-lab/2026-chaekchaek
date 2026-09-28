@@ -13,18 +13,22 @@ export type AnalyticsEventMap = {
   review_write_open: {
     actor_type: 'MEMBER' | 'GUEST';
     actor_id: number;
+    isbn: string;
   };
   review_submit: {
     actor_type: 'MEMBER' | 'GUEST';
     actor_id: number;
+    isbn: string;
   };
   reply_write_open: {
     actor_type: 'MEMBER' | 'GUEST';
     actor_id: number;
+    isbn: string;
   };
   reply_submit: {
     actor_type: 'MEMBER' | 'GUEST';
     actor_id: number;
+    isbn: string;
   };
   current_page_open: undefined;
   current_page_submit: undefined;

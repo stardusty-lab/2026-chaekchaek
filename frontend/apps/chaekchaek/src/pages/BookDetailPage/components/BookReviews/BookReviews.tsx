@@ -29,10 +29,10 @@ export const BookReviews = ({
     setDialog(dialog);
 
     if (user) {
-      track('review_write_open', { actor_type: user.actorType, actor_id: user.actorId });
+      track('review_write_open', { actor_type: user.actorType, actor_id: user.actorId, isbn });
     }
     if (guest) {
-      track('review_write_open', { actor_type: guest.actorType, actor_id: guest.actorId });
+      track('review_write_open', { actor_type: guest.actorType, actor_id: guest.actorId, isbn });
     }
   };
   const handleCloseDialog = () => {
@@ -103,7 +103,12 @@ export const BookReviews = ({
         ?.filter((review) => !review.deleted)
         .map((review) => {
           return (
-            <BookReview key={review.reviewId} review={review} onReviewsRefresh={onReviewsRefresh} />
+            <BookReview
+              key={review.reviewId}
+              isbn={isbn}
+              review={review}
+              onReviewsRefresh={onReviewsRefresh}
+            />
           );
         })}
       <Field sx={{ mt: 4, mb: 6 }}>
