@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Media } from './';
 
 import { ImgBox } from '../ImgBox';
-import DummyImg from '../ImgBox/imgs/dummy.png';
+import DummyLargeImg from '../ImgBox/imgs/dummy-large.png';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -11,7 +11,7 @@ const meta = {
   component: Media,
   args: {
     variant: 'default',
-    media: <ImgBox img={DummyImg} size="large" />,
+    media: <ImgBox img={DummyLargeImg} size="x-large" />,
     title: '마션',
     description: '앤디 위어',
   },
