@@ -44,8 +44,8 @@ import styles from './BookReview.module.css';
 const SPOILER_PLACEHOLDER_REVIEW = '짹짹짹 짹짹 짹짹짹짹. 짹짹짹 짹짹짹 짹짹짹 짹짹짹짹 짹짹짹짹.';
 const SPOILER_PLACEHOLDER_REPLY = '“짹짹짹 짹짹 짹짹짹짹 짹짹.”';
 
-export const BookReview = ({ review, onReviewsRefresh }: BookReviewProps) => {
-  const { isAuthenticated, guest } = useAuthContext();
+export const BookReview = ({ isbn, review, onReviewsRefresh }: BookReviewProps) => {
+  const { isAuthenticated, user, guest } = useAuthContext();
   const getReviewsReviewIdRepliesLoadData = useCallback(() => {
     return getReviewsReviewIdReplies({ reviewId: review.reviewId, page: 1 });
   }, [review.reviewId]);
@@ -119,7 +119,12 @@ export const BookReview = ({ review, onReviewsRefresh }: BookReviewProps) => {
     if (!openWriteReply) {
       setOpenWriteReply(true);
 
-      track('reply_write_open', { user_type: guest ? 'guest' : 'member' });
+      if (user) {
+        track('reply_write_open', { actor_type: user.actorType, actor_id: user.actorId, isbn });
+      }
+      if (guest) {
+        track('reply_write_open', { actor_type: guest.actorType, actor_id: guest.actorId, isbn });
+      }
     } else {
       setOpenWriteReply(false);
     }
@@ -293,7 +298,11 @@ export const BookReview = ({ review, onReviewsRefresh }: BookReviewProps) => {
       {(!!repliesData?.items.length || openWriteReply) && (
         <Entry.Extension>
           {openWriteReply && (
-            <WriteReply reviewId={review.reviewId} onReplyWritten={handleReplyWritten} />
+            <WriteReply
+              isbn={isbn}
+              reviewId={review.reviewId}
+              onReplyWritten={handleReplyWritten}
+            />
           )}
           {repliesData?.items.map((reply) => {
             return (
