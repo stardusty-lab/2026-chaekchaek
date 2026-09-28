@@ -22,15 +22,18 @@ export const BookReviews = ({
   onSortChange,
   onFeedChange,
 }: BookReviewsProps) => {
-  const { guest } = useAuthContext();
+  const { user, guest } = useAuthContext();
 
   const [dialog, setDialog] = useState<'WriteReviewDialog' | null>(null);
   const handleOpenDialog = (dialog: 'WriteReviewDialog') => {
     setDialog(dialog);
 
-    track('review_write_open', {
-      user_type: guest ? 'guest' : 'member',
-    });
+    if (user) {
+      track('review_write_open', { actor_type: user.actorType, actor_id: user.actorId });
+    }
+    if (guest) {
+      track('review_write_open', { actor_type: guest.actorType, actor_id: guest.actorId });
+    }
   };
   const handleCloseDialog = () => {
     setDialog(null);

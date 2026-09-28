@@ -49,7 +49,12 @@ export const WriteReply = ({ reviewId, onReplyWritten }: WriteReplyProps) => {
         : undefined,
     );
 
-    track('reply_submit', { user_type: guest ? 'guest' : 'member' });
+    if (user) {
+      track('reply_submit', { actor_type: user.actorType, actor_id: user.actorId });
+    }
+    if (guest) {
+      track('reply_submit', { actor_type: guest.actorType, actor_id: guest.actorId });
+    }
 
     await onReplyWritten();
   };

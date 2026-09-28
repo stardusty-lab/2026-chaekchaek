@@ -45,7 +45,7 @@ const SPOILER_PLACEHOLDER_REVIEW = '짹짹짹 짹짹 짹짹짹짹. 짹짹짹 짹
 const SPOILER_PLACEHOLDER_REPLY = '“짹짹짹 짹짹 짹짹짹짹 짹짹.”';
 
 export const BookReview = ({ review, onReviewsRefresh }: BookReviewProps) => {
-  const { isAuthenticated, guest } = useAuthContext();
+  const { isAuthenticated, user, guest } = useAuthContext();
   const getReviewsReviewIdRepliesLoadData = useCallback(() => {
     return getReviewsReviewIdReplies({ reviewId: review.reviewId, page: 1 });
   }, [review.reviewId]);
@@ -119,7 +119,12 @@ export const BookReview = ({ review, onReviewsRefresh }: BookReviewProps) => {
     if (!openWriteReply) {
       setOpenWriteReply(true);
 
-      track('reply_write_open', { user_type: guest ? 'guest' : 'member' });
+      if (user) {
+        track('reply_write_open', { actor_type: user.actorType, actor_id: user.actorId });
+      }
+      if (guest) {
+        track('reply_write_open', { actor_type: guest.actorType, actor_id: guest.actorId });
+      }
     } else {
       setOpenWriteReply(false);
     }

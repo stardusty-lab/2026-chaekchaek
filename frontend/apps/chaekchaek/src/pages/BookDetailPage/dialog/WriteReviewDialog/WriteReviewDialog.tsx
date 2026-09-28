@@ -77,9 +77,12 @@ export const WriteReviewDialog = ({
         ...requestData,
       });
 
-      track('review_write_open', {
-        user_type: 'member',
-      });
+      if (user) {
+        track('review_write_open', {
+          actor_type: user.actorType,
+          actor_id: user.actorId,
+        });
+      }
     } else {
       if (!guest) return;
       await postBookReviewByIsbnMutate(
@@ -93,7 +96,8 @@ export const WriteReviewDialog = ({
       );
 
       track('review_write_open', {
-        user_type: 'guest',
+        actor_type: guest.actorType,
+        actor_id: guest.actorId,
       });
     }
 

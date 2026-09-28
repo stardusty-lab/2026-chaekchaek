@@ -11,16 +11,20 @@ export type AnalyticsEventMap = {
     status: 'want_to_read' | 'reading' | 'finished';
   };
   review_write_open: {
-    user_type: 'member' | 'guest';
+    actor_type: 'MEMBER' | 'GUEST';
+    actor_id: number;
   };
   review_submit: {
-    user_type: 'member' | 'guest';
+    actor_type: 'MEMBER' | 'GUEST';
+    actor_id: number;
   };
   reply_write_open: {
-    user_type: 'member' | 'guest';
+    actor_type: 'MEMBER' | 'GUEST';
+    actor_id: number;
   };
   reply_submit: {
-    user_type: 'member' | 'guest';
+    actor_type: 'MEMBER' | 'GUEST';
+    actor_id: number;
   };
   current_page_open: undefined;
   current_page_submit: undefined;
