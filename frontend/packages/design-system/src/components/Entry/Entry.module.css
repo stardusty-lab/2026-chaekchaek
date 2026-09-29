@@ -55,6 +55,14 @@
   background: #F7F2EC;
 }
 
+.variant-bare .ui-Entry-Main {
+  background: transparent;
+}
+
+.line-none .ui-Entry-Main {
+  border-color: transparent;
+}
+
 .line-outline .ui-Entry-Main {
   border-color: #DDD7CE;
 }
