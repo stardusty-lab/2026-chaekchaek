@@ -39,6 +39,9 @@ export type { Props as OverviewProps } from './components/Overview';
 export { Partition } from './components/Partition';
 export type { Props as PartitionProps } from './components/Partition';
 
+export { Divider } from './components/Divider';
+export type { Props as DividerProps } from './components/Divider';
+
 export { ProgressBar } from './components/ProgressBar';
 export type { Props as ProgressBarProps } from './components/ProgressBar';
 
