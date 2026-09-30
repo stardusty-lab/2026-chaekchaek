@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   Avatar,
   Button,
@@ -19,6 +21,16 @@ const SPOILER_PLACEHOLDER_REVIEW = '짹짹짹 짹짹 짹짹짹짹. 짹짹짹 짹
 
 export const BookFeed = (props: BookFeedProps) => {
   const { review } = props;
+
+  const [isSpoilerVisible, setIsSpoilerVisible] = useState(false);
+
+  const handleClickShowSpoiler = () => {
+    if (!review.isSpoiler) return;
+
+    setIsSpoilerVisible(true);
+  };
+
+  const showSpoilerVisible = isSpoilerVisible || !review.isSpoiler;
 
   return (
     <>
@@ -44,8 +56,8 @@ export const BookFeed = (props: BookFeedProps) => {
                   />
                 </Shell>
               </Entry.Header>
-              <Entry.Body>
-                {!review.isSpoiler ? (
+              <Entry.Body onClick={handleClickShowSpoiler}>
+                {showSpoilerVisible ? (
                   review.content
                 ) : (
                   <>
