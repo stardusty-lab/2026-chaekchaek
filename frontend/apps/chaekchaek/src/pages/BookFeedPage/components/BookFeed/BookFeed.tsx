@@ -17,6 +17,8 @@ import {
 
 import { ROUTES } from '@/constants/routes';
 
+import { track } from '@/analytics/track';
+
 import styles from './BookFeed.module.css';
 
 import type { BookFeedProps } from './BookFeed.types';
@@ -35,7 +37,20 @@ export const BookFeed = (props: BookFeedProps) => {
       e.preventDefault();
 
       setIsSpoilerVisible(true);
+      return;
     }
+
+    track('navigate', {
+      destination: 'book_detail',
+      source: 'book_feed',
+    });
+  };
+
+  const handleClickBook = () => {
+    track('navigate', {
+      destination: 'book_detail',
+      source: 'book_feed',
+    });
   };
 
   const handleClickAvatar = (isProfileAvailable: boolean) => {
@@ -43,6 +58,11 @@ export const BookFeed = (props: BookFeedProps) => {
       handleOpenDialog('AlertDialog');
       return;
     }
+
+    track('navigate', {
+      destination: 'members_library',
+      source: 'book_feed',
+    });
   };
 
   const [dialog, setDialog] = useState<'AlertDialog' | null>(null);
@@ -76,7 +96,7 @@ export const BookFeed = (props: BookFeedProps) => {
       <Divider />
       <Partition key={review.reviewId}>
         <Partition.Item>
-          <Link to={`/books/${review.isbn13}`}>
+          <Link to={`/books/${review.isbn13}`} onClick={handleClickBook}>
             <Media
               media={<ImgBox size="large" img={review.bookCoverImageUrl} />}
               title={review.bookTitle}
