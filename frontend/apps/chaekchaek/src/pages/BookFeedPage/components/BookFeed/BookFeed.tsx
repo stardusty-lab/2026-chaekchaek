@@ -128,6 +128,7 @@ export const BookFeed = (props: BookFeedProps) => {
             <Media
               media={<ImgBox size="large" img={review.bookCoverImageUrl} />}
               title={review.bookTitle}
+              description={review.bookAuthors.join(' · ')}
             />
           </Link>
         </Partition.Item>

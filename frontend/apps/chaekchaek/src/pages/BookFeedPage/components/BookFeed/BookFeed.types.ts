@@ -15,6 +15,7 @@ export type BookFeedReview = {
   isSpoiler: boolean;
   content: string;
   replyCount: number;
+  bookAuthors: string[];
   likedByMe: boolean;
   likeCount: number;
 };
