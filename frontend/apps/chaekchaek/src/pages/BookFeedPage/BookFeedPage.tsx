@@ -17,6 +17,7 @@ export const BookFeedPage = () => {
     return await getFeedReviews({ page: 1 });
   }, []);
   const {
+    refetch,
     status: { data: feedReviews },
   } = useLoadData({
     queryFn: getFeedReviewsLoadData,
@@ -33,7 +34,7 @@ export const BookFeedPage = () => {
             </Title>
 
             {feedReviews?.reviews.map((review) => {
-              return <BookFeed key={review.reviewId} review={review} />;
+              return <BookFeed key={review.reviewId} review={review} onFeedRefresh={refetch} />;
             })}
           </ContentArea>
         </Container>

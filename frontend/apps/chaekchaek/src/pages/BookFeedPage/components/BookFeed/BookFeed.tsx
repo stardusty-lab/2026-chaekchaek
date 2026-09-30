@@ -19,6 +19,15 @@ import { ROUTES } from '@/constants/routes';
 
 import { track } from '@/analytics/track';
 
+import {
+  deleteReviewsReviewIdReactions,
+  postReviewsReviewIdReactions,
+} from '@/services/apis/reviewsReviewIdReactions/repository';
+
+import { useAuthContext } from '@/contexts/AuthContext/useAuthContext';
+
+import { useExecute } from '@/services/core/useExecute';
+
 import styles from './BookFeed.module.css';
 
 import type { BookFeedProps } from './BookFeed.types';
@@ -26,7 +35,9 @@ import type { BookFeedProps } from './BookFeed.types';
 const SPOILER_PLACEHOLDER_REVIEW = '짹짹짹 짹짹 짹짹짹짹. 짹짹짹 짹짹짹 짹짹짹 짹짹짹짹 짹짹짹짹.';
 
 export const BookFeed = (props: BookFeedProps) => {
-  const { review } = props;
+  const { review, onFeedRefresh } = props;
+
+  const { isAuthenticated } = useAuthContext();
 
   const [isSpoilerVisible, setIsSpoilerVisible] = useState(false);
 
@@ -63,6 +74,23 @@ export const BookFeed = (props: BookFeedProps) => {
       destination: 'members_library',
       source: 'book_feed',
     });
+  };
+
+  const { mutate: postReviewReactionMutate } = useExecute({
+    executeFn: postReviewsReviewIdReactions,
+  });
+  const { mutate: deleteReviewReactionMutate } = useExecute({
+    executeFn: deleteReviewsReviewIdReactions,
+  });
+
+  const handleClickReviewReaction = async () => {
+    if (!review.likedByMe) {
+      await postReviewReactionMutate({ reviewId: review.reviewId });
+    } else {
+      await deleteReviewReactionMutate({ reviewId: review.reviewId });
+    }
+
+    await onFeedRefresh?.();
   };
 
   const [dialog, setDialog] = useState<'AlertDialog' | null>(null);
@@ -146,10 +174,17 @@ export const BookFeed = (props: BookFeedProps) => {
                 <Button
                   shape="link"
                   variant="ghost"
-                  leading={<Icon.HeartOffIcon color="secondary" />}
-                  readOnly
+                  leading={
+                    review.likedByMe ? (
+                      <Icon.HeartOnIcon color="secondary" />
+                    ) : (
+                      <Icon.HeartOffIcon color="secondary" />
+                    )
+                  }
+                  disabled={!isAuthenticated}
+                  onClick={handleClickReviewReaction}
                 >
-                  좋아요 0
+                  좋아요 {review.likeCount}
                 </Button>
                 <Button
                   shape="link"

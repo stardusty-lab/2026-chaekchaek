@@ -15,8 +15,11 @@ export type BookFeedReview = {
   isSpoiler: boolean;
   content: string;
   replyCount: number;
+  likedByMe: boolean;
+  likeCount: number;
 };
 
 export type BookFeedProps = {
   review: BookFeedReview;
+  onFeedRefresh?: () => void;
 };
