@@ -1,7 +1,14 @@
 export type StatusType = 'idle' | 'loading' | 'success' | 'error';
 
 export type Options<TData = unknown> = {
-  queryFn: () => Promise<TData>;
+  queryFn: ({ pageParam }: { pageParam: number }) => Promise<TData>;
+  initialPageParam: number;
+  getNextPageParam: (lastData: TData | null) => number;
+};
+
+type InfiniteData<TData> = {
+  pages: TData[];
+  pageParams: number[];
 };
 
 type IdleStatus = {
@@ -12,7 +19,7 @@ type IdleStatus = {
 
 type SuccessStatus<TData> = {
   status: 'success';
-  data: TData;
+  data: InfiniteData<TData>;
   error: null;
 };
 
@@ -24,7 +31,7 @@ type ErrorStatus = {
 
 type LoadingStatus<TData> = {
   status: 'loading';
-  data: TData | null;
+  data: InfiniteData<TData> | null;
   error: unknown | null;
 };
 
@@ -34,4 +41,5 @@ export type Status<TData = unknown> =
 export type Result<TData = unknown> = {
   status: Status<TData>;
   refetch: () => Promise<TData | void>;
+  fetchNextPage: () => Promise<TData | void>;
 };
