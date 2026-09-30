@@ -1,0 +1,47 @@
+// /api/v1/feed/reviews 예제를 바탕으로 한 스포일러 없는 감상 목록
+export const feedReviewsPage1 = {
+  totalCount: 2,
+  nextPage: null,
+  reviews: [
+    {
+      reviewId: 123,
+      content: '감상 내용',
+      isSpoiler: false,
+      createdAt: '2026-09-28T10:00:00Z',
+      author: {
+        memberId: 1,
+        displayName: '독자',
+        profileImageUrl: null,
+        anonymous: false,
+        mine: false,
+        actorType: 'MEMBER',
+        profileStatus: 'AVAILABLE',
+      },
+      replyCount: 3,
+      bookId: 42,
+      isbn13: '9788936433598',
+      bookTitle: '도서 제목',
+      bookCoverImageUrl: 'https://example.com/cover.jpg',
+    },
+    {
+      reviewId: 122,
+      content: '책을 덮고도 오래 생각하게 되는 이야기였다.',
+      isSpoiler: false,
+      createdAt: '2026-09-27T10:00:00Z',
+      author: {
+        memberId: 2,
+        displayName: '다정한 참새',
+        profileImageUrl: null,
+        anonymous: false,
+        mine: false,
+        actorType: 'MEMBER',
+        profileStatus: 'AVAILABLE',
+      },
+      replyCount: 5,
+      bookId: 43,
+      isbn13: '9788925568683',
+      bookTitle: '마션',
+      bookCoverImageUrl: 'https://example.com/martian.jpg',
+    },
+  ],
+};
