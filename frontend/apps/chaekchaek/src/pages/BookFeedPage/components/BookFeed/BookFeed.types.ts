@@ -1,10 +1,15 @@
 export type BookFeedReview = {
   reviewId: number;
+  isbn13: string;
   bookCoverImageUrl: string;
   bookTitle: string;
   author: {
-    profileImageUrl: string | null;
+    memberId?: number | null;
+    actorType: 'MEMBER' | 'GUEST';
+    profileStatus: 'AVAILABLE' | 'UNAVAILABLE' | 'WITHDRAWN';
     displayName: string;
+    profileImageUrl: string;
+    mine: boolean;
   };
   createdAt: string;
   isSpoiler: boolean;
