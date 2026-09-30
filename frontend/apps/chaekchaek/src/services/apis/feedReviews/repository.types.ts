@@ -9,7 +9,7 @@ export type GetFeedReviews = (params: GetFeedReviewsParams) => Promise<{
     isSpoiler: boolean;
     author: {
       mine: boolean;
-      actorType: string;
+      actorType: 'MEMBER' | 'GUEST';
       displayName: string;
       profileStatus: string;
       anonymous: boolean;
@@ -21,7 +21,10 @@ export type GetFeedReviews = (params: GetFeedReviewsParams) => Promise<{
     reviewId: number;
     content: string;
     bookTitle: string;
+    bookAuthors: string[];
     bookId: number;
+    likeCount: number;
+    likedByMe: boolean;
   }[];
   nextPage: number;
   totalCount: number;

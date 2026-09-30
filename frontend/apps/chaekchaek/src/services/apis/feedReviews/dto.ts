@@ -11,7 +11,7 @@ export type GetFeedReviewsResponseDto = ResponseDto<{
     isSpoiler: boolean;
     author: {
       mine: boolean;
-      actorType: string;
+      actorType: 'MEMBER' | 'GUEST';
       displayName: string;
       profileStatus: string;
       anonymous: boolean;
@@ -23,7 +23,10 @@ export type GetFeedReviewsResponseDto = ResponseDto<{
     reviewId: number;
     content: string;
     bookTitle: string;
+    bookAuthors: string[];
     bookId: number;
+    likeCount: number;
+    likedByMe: boolean;
   }[];
   nextPage: number;
   totalCount: number;
