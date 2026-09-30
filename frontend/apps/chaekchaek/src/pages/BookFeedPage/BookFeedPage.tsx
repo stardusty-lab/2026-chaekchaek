@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { Layout } from '@/frames';
 import { Header } from '@/frames';
@@ -7,21 +7,49 @@ import { Container } from '@/frames/Container';
 
 import { Title, ContentArea } from '@chaekchaek/design-system';
 
-import { useLoadData } from '@/services/core/useLoadData';
+import { useInfiniteLoadData } from '@/services/core/useInfiniteLoadData';
 import { getFeedReviews } from '@/services/apis/feedReviews/repository';
 
 import { BookFeed } from './components/BookFeed';
 
 export const BookFeedPage = () => {
-  const getFeedReviewsLoadData = useCallback(async () => {
-    return await getFeedReviews({ page: 1 });
+  const getFeedReviewsLoadData = useCallback(async ({ pageParam }: { pageParam: number }) => {
+    return await getFeedReviews({ page: pageParam });
   }, []);
+
   const {
     refetch,
-    status: { data: feedReviews },
-  } = useLoadData({
+    status: { data: reviewsDataAll },
+    fetchNextPage,
+  } = useInfiniteLoadData({
     queryFn: getFeedReviewsLoadData,
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => {
+      return lastPage?.nextPage || 1;
+    },
   });
+
+  const feedReviews = (reviewsDataAll?.pages ?? []).flatMap((page) => page.reviews);
+
+  useEffect(() => {
+    const handleScroll = async () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight;
+      const clientHeight = document.documentElement.clientHeight;
+
+      if (clientHeight >= scrollHeight - scrollTop) {
+        if (reviewsDataAll?.pages?.[reviewsDataAll?.pages.length - 1]?.nextPage === null) {
+          return;
+        }
+        await fetchNextPage();
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [reviewsDataAll]);
 
   return (
     <Layout>
@@ -33,7 +61,7 @@ export const BookFeedPage = () => {
               전체 감상 피드
             </Title>
 
-            {feedReviews?.reviews.map((review) => {
+            {feedReviews.map((review) => {
               return <BookFeed key={review.reviewId} review={review} onFeedRefresh={refetch} />;
             })}
           </ContentArea>
