@@ -13,6 +13,11 @@
 
 .ui-Partition-Item {
   display: flex;
+  flex: none;
+}
+
+.ui-Partition-Item + .ui-Partition-Item {
+  flex: 1;
 }
 
 .ui-Partition-Item > * {
