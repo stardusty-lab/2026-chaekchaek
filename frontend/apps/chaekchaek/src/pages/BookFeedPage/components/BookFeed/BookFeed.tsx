@@ -10,6 +10,7 @@ import {
   Icon,
   ImgBox,
   Media,
+  Note,
   Partition,
   Shell,
   Text,
@@ -168,6 +169,15 @@ export const BookFeed = (props: BookFeedProps) => {
                         (스포일러 · 눌러보기)
                       </Text>
                     </>
+                  )}
+                  {review.quote && (
+                    <Note variant="default" sx={{ mt: 4 }}>
+                      {showSpoilerVisible ? (
+                        review.quote
+                      ) : (
+                        <span className={styles.spoiler}>{SPOILER_PLACEHOLDER_REVIEW}</span>
+                      )}
+                    </Note>
                   )}
                 </Link>
               </Entry.Body>

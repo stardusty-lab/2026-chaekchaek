@@ -14,6 +14,7 @@ export type BookFeedReview = {
   createdAt: string;
   isSpoiler: boolean;
   content: string;
+  quote?: string;
   replyCount: number;
   bookAuthors: string[];
   likedByMe: boolean;
