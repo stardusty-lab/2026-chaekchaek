@@ -22,6 +22,7 @@ export type GetFeedReviewsResponseDto = ResponseDto<{
     bookCoverImageUrl: string;
     reviewId: number;
     content: string;
+    quote?: string;
     bookTitle: string;
     bookAuthors: string[];
     bookId: number;
