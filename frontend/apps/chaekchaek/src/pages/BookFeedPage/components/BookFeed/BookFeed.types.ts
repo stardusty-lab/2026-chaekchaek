@@ -19,6 +19,7 @@ export type BookFeedReview = {
   bookAuthors: string[];
   likedByMe: boolean;
   likeCount: number;
+  currentPage?: number;
 };
 
 export type BookFeedProps = {

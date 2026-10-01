@@ -3,6 +3,7 @@ import { generatePath, Link } from 'react-router-dom';
 
 import {
   Avatar,
+  Badge,
   Button,
   Dialog,
   Divider,
@@ -153,7 +154,16 @@ export const BookFeed = (props: BookFeedProps) => {
                     />
                   </Shell.Leading>
                   <Shell.Content
-                    title={review.author.displayName}
+                    title={
+                      <>
+                        {review.author.displayName}{' '}
+                        {review.currentPage && (
+                          <Badge variant="subtle" size="x-small" sx={{ ml: 2 }}>
+                            P. {review.currentPage} 까지
+                          </Badge>
+                        )}
+                      </>
+                    }
                     content={new Date(review.createdAt).toLocaleDateString('ko-KR')}
                   />
                 </Shell>
