@@ -15,6 +15,9 @@ export type { Props as DataInfoProps } from './components/DataInfo';
 export { ImgBox } from './components/ImgBox';
 export type { Props as ImgBoxProps } from './components/ImgBox';
 
+export { ConstrainedImgBox } from './components/ConstrainedImgBox';
+export type { Props as ConstrainedImgBoxProps } from './components/ConstrainedImgBox';
+
 export { Media } from './components/Media';
 export type { Props as MediaProps } from './components/Media';
 
