@@ -33,3 +33,13 @@
 
 #### 배포 환경
 - 개발 서버와 운영 서버의 배포 환경 분리 [#374](https://github.com/woowacourse-teams/2026-chaekchaek/pull/374), [#375](https://github.com/woowacourse-teams/2026-chaekchaek/pull/375), [#376](https://github.com/woowacourse-teams/2026-chaekchaek/pull/376), [#377](https://github.com/woowacourse-teams/2026-chaekchaek/pull/377), [#378](https://github.com/woowacourse-teams/2026-chaekchaek/pull378/),
+
+## 1.1.0
+
+### Added
+
+#### 피드 페이지 추가
+- 다른 사용자가 작성한 감상을 모아볼 수 있는 피드 기능 추 [#423](https://github.com/woowacourse-teams/2026-chaekchaek/pull/423), [#428](https://github.com/woowacourse-teams/2026-chaekchaek/pull/428)
+
+#### 서재 책등 시각화 추가
+- 공유 서재와 내 서재에서 보유한 책의 책등 이미지를 시각화 [#426](https://github.com/woowacourse-teams/2026-chaekchaek/pull/426)
