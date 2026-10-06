@@ -13,7 +13,7 @@ const clientEnvs = {
 } as const satisfies Record<AppEnv, string>;
 
 export const getOauthLoginUrl = (provider: OauthProvider) => {
-  const url = new URL(`/api/v1/auth/oauth2/${provider}`, ENV.APP_API_URL);
+  const url = new URL(`/api/v1/auth/oauth2/${provider}`, ENV.APP_API_URL || window.location.origin);
 
   url.searchParams.set('client', clientEnvs[ENV.APP_ENV]);
 
