@@ -5,6 +5,10 @@
       "destination": "https://dev-api.chaekchaek.com/api/:path*"
     },
     {
+      "source": "/oauth2/:path*",
+      "destination": "https://dev-api.chaekchaek.com/oauth2/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
