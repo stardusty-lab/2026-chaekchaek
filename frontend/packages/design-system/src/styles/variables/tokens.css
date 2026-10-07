@@ -1,0 +1,170 @@
+/*
+ * ChaekChaek design tokens
+ * Generated from Figma token JSON exports.
+ * Do not edit generated values manually; update the source tokens instead.
+ */
+
+:root {
+  /* Primitive */
+  --chaek-color-191919: #191919;
+  --chaek-color-333333: #333333;
+  --chaek-color-555555: #555555;
+  --chaek-color-626262: #626262;
+  --chaek-color-656565: #656565;
+  --chaek-color-666666: #666666;
+  --chaek-color-707070: #707070;
+  --chaek-color-777777: #777777;
+  --chaek-color-797979: #797979;
+  --chaek-color-858585: #858585;
+  --chaek-color-1c1c1c: #1C1C1C;
+  --chaek-color-ffffff: #FFFFFF;
+  --chaek-color-ff920f: #FF920F;
+  --chaek-color-f3f3f5: #F3F3F5;
+  --chaek-color-8a8a8a: #8A8A8A;
+  --chaek-color-dddde1: #DDDDE1;
+  --chaek-color-ff8500: #FF8500;
+  --chaek-color-ececee: #ECECEE;
+  --chaek-color-4d4d4d: #4D4D4D;
+  --chaek-color-e1e1e5: #E1E1E5;
+  --chaek-color-56565d: #56565D;
+  --chaek-color-f0f0f3: #F0F0F3;
+  --chaek-color-e7e7e9: #E7E7E9;
+  --chaek-color-e0e0e3: #E0E0E3;
+  --chaek-color-bdbdbd: #BDBDBD;
+  --chaek-color-f1f1f3: #F1F1F3;
+  --chaek-color-ff9b33: #FF9B33;
+  --chaek-color-e7e5e0: #E7E5E0;
+  --chaek-color-1b1b1b: #1B1B1B;
+  --chaek-font-family-gowun-dodum: "Gowun Dodum";
+  --chaek-font-family-pretendard: Pretendard;
+
+  /* Semantic */
+  --chaek-color-surface-action: var(--chaek-color-1c1c1c);
+  --chaek-color-surface-subtle: var(--chaek-color-f3f3f5);
+  --chaek-color-surface-inverse: var(--chaek-color-191919);
+  --chaek-color-surface-progress-track-detail: var(--chaek-color-dddde1);
+  --chaek-color-surface-accent: var(--chaek-color-ff8500);
+  --chaek-color-surface-progress-track: var(--chaek-color-ececee);
+  --chaek-color-surface-progress-track-inverse: var(--chaek-color-4d4d4d);
+  --chaek-color-surface-avatar-home: var(--chaek-color-e1e1e5);
+  --chaek-color-surface-avatar-detail: var(--chaek-color-f0f0f3);
+  --chaek-color-surface-canvas: var(--chaek-color-ffffff);
+  --chaek-color-surface-source-f1f1f3: var(--chaek-color-f1f1f3);
+  --chaek-color-surface-source-e7e5e0: var(--chaek-color-e7e5e0);
+  --chaek-color-surface-action-pressed: var(--chaek-color-333333);
+  --chaek-color-text-inverse: var(--chaek-color-ffffff);
+  --chaek-color-text-accent-detail: var(--chaek-color-ff920f);
+  --chaek-color-text-placeholder: var(--chaek-color-8a8a8a);
+  --chaek-color-text-filter-inactive: var(--chaek-color-707070);
+  --chaek-color-text-muted: var(--chaek-color-777777);
+  --chaek-color-text-primary: var(--chaek-color-191919);
+  --chaek-color-text-avatar: var(--chaek-color-56565d);
+  --chaek-color-text-secondary: var(--chaek-color-666666);
+  --chaek-color-text-inactive: var(--chaek-color-858585);
+  --chaek-color-text-source-656565: var(--chaek-color-656565);
+  --chaek-color-text-source-797979: var(--chaek-color-797979);
+  --chaek-color-text-source-626262: var(--chaek-color-626262);
+  --chaek-color-text-source-333333: var(--chaek-color-333333);
+  --chaek-color-text-accent: var(--chaek-color-ff8500);
+  --chaek-color-text-source-bdbdbd: var(--chaek-color-bdbdbd);
+  --chaek-color-text-source-555555: var(--chaek-color-555555);
+  --chaek-color-text-accent-inverse: var(--chaek-color-ff9b33);
+  --chaek-color-text-primary-detail: var(--chaek-color-1b1b1b);
+  --chaek-color-border-strong: var(--chaek-color-191919);
+  --chaek-color-border-divider: var(--chaek-color-dddde1);
+  --chaek-color-border-navigation: var(--chaek-color-e7e7e9);
+  --chaek-color-border-source-858585: var(--chaek-color-858585);
+  --chaek-color-border-source-e0e0e3: var(--chaek-color-e0e0e3);
+  --chaek-color-border-source-626262: var(--chaek-color-626262);
+  --chaek-color-border-source-ffffff: var(--chaek-color-ffffff);
+
+  /* Layout */
+  --chaek-space-0: 0px;
+  --chaek-space-1: 1px;
+  --chaek-space-2: 2px;
+  --chaek-space-4: 4px;
+  --chaek-space-5: 5px;
+  --chaek-space-6: 6px;
+  --chaek-space-8: 8px;
+  --chaek-space-9: 9px;
+  --chaek-space-10: 10px;
+  --chaek-space-11: 11px;
+  --chaek-space-12: 12px;
+  --chaek-space-13: 13px;
+  --chaek-space-15: 15px;
+  --chaek-space-16: 16px;
+  --chaek-space-18: 18px;
+  --chaek-space-22: 22px;
+  --chaek-space-24: 24px;
+  --chaek-space-28: 28px;
+  --chaek-space-32: 32px;
+  --chaek-radius-0: 0px;
+  --chaek-radius-2: 2px;
+  --chaek-radius-3: 3px;
+  --chaek-radius-4: 4px;
+  --chaek-radius-6: 6px;
+  --chaek-radius-7: 7px;
+  --chaek-radius-8: 8px;
+  --chaek-radius-9: 9px;
+  --chaek-radius-12: 12px;
+  --chaek-radius-14: 14px;
+  --chaek-radius-15: 15px;
+  --chaek-radius-16: 16px;
+  --chaek-radius-18: 18px;
+  --chaek-radius-20: 20px;
+  --chaek-radius-22: 22px;
+  --chaek-radius-999: 999px;
+  --chaek-opacity-1: 1;
+  --chaek-opacity-0-12: 0.12;
+  --chaek-opacity-0-15: 0.15;
+  --chaek-opacity-0-96: 0.96;
+  --chaek-size-touch-min: 44px;
+  --chaek-size-button: 50px;
+  --chaek-size-search: 54px;
+  --chaek-size-navigation: 88px;
+  --chaek-size-page-compact: 320px;
+  --chaek-size-page-standard: 390px;
+
+  /* Typography */
+  --chaek-font-size-7: 7px;
+  --chaek-font-size-9: 9px;
+  --chaek-font-size-10: 10px;
+  --chaek-font-size-11: 11px;
+  --chaek-font-size-12: 12px;
+  --chaek-font-size-13: 13px;
+  --chaek-font-size-14: 14px;
+  --chaek-font-size-15: 15px;
+  --chaek-font-size-16: 16px;
+  --chaek-font-size-20: 20px;
+  --chaek-font-size-21: 21px;
+  --chaek-font-size-22: 22px;
+  --chaek-font-size-23: 23px;
+  --chaek-font-size-29: 29px;
+  --chaek-line-height-15: 15px;
+  --chaek-line-height-16: 16px;
+  --chaek-line-height-18: 18px;
+  --chaek-line-height-21: 21px;
+  --chaek-line-height-24: 24px;
+  --chaek-line-height-30: 30px;
+  --chaek-line-height-34-8: 34.8px;
+  --chaek-line-height-28-75: 28.75px;
+  --chaek-line-height-31-5: 31.5px;
+  --chaek-line-height-22-5: 22.5px;
+  --chaek-line-height-22-4: 22.4px;
+  --chaek-line-height-28-8: 28.8px;
+  --chaek-line-height-22-1: 22.1px;
+  --chaek-line-height-19-5: 19.5px;
+  --chaek-line-height-23-2: 23.2px;
+  --chaek-line-height-19-2: 19.2px;
+  --chaek-line-height-11-25: 11.25px;
+  --chaek-font-family-ui: var(--chaek-font-family-gowun-dodum);
+  --chaek-font-family-icon: var(--chaek-font-family-pretendard);
+
+  /* Loading */
+  --color-skeleton-base: #E7E5E0;
+  --color-skeleton-highlight: #F9F8F6;
+  --radius-skeleton-line: 7px;
+  --radius-skeleton-soft: 12px;
+  --radius-skeleton-cover: 6px;
+  --radius-skeleton-round: 999px;
+}
