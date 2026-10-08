@@ -27,3 +27,13 @@ export const WithHeader: Story = {
     label: <>196쪽 / 196쪽</>,
   },
 };
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+    value: 50,
+    max: 100,
+    title: 'Progress',
+    label: '50%',
+  },
+};
