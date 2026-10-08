@@ -32,18 +32,29 @@ Figma 디자인을 참고하여 기존 디자인 시스템 컴포넌트의 스�
 - Props 조합별 스타일이 필요하다고 판단되는 경우 임의로 구현하지 말고, 필요한 이유와 해당 스타일을 보고한다.
 
 3-2. CSS 디자인 토큰
+핵심 원칙: 디자인 토큰을 우선 사용하되, 적절한 토큰이 없으면 Figma의 원시값을 사용한다.
 
-다음 파일에 정의된 토큰만 사용해 줘.
+사용 가능한 토큰 파일:
 - ./frontend/packages/design-system/src/styles/variables/tokens/semantic.css
 - ./frontend/packages/design-system/src/styles/variables/tokens/primitive.css
-가능하면 semantic 토큰을 우선 사용해 줘.
+
+토큰 선택 우선순위:
+
+1. 디자인 의도와 값이 모두 일치하는 semantic 토큰
+2. 값이 일치하는 primitive 토큰
+3. 적절한 토큰이 없는 경우 Figma의 원시값(색상, 크기, 간격, radius 등)
+
+
+Figma 값과 다른 토큰을 억지로 적용하지 않는다. 토큰을 새로 만들거나 기존 토큰의 정의를 변경하지 않는다.
 
 다음 파일의 토큰은 사용하지 마.
 - ./frontend/packages/design-system/src/styles/variables/tokens/layout.css
 - ./frontend/packages/design-system/src/styles/variables/tokens/loading.css
 - ./frontend/packages/design-system/src/styles/variables/tokens/typography.css
 
-적절한 토큰이 없다면 임의로 새로운 토큰이나 하드코딩된 값을 추가하지 말고, 작업 완료 후 확인이 필요한 사항으로 알려줘.
+적절한 토큰이 없다는 이유만으로 Figma 스타일 반영을 생략하거나 확인 요청을 남기지 않는다.
+
+다만 Figma에서 값을 확인할 수 없거나 디자인 의도가 모호한 경우에는 기존 스타일을 유지하고 보고한다.
 
 4. Storybook
 
