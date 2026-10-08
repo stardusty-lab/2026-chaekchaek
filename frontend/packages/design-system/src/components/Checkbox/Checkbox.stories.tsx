@@ -6,7 +6,7 @@ const meta = {
   title: 'Checkbox/Checkbox',
   component: Checkbox,
   args: {
-    'aria-label': '책 선택',
+    'aria-label': 'Checkbox',
   },
 } satisfies Meta<typeof Checkbox>;
 
@@ -23,7 +23,7 @@ export const Checked: Story = {
 
 export const WithLabel: Story = {
   args: {
-    children: '책 선택',
+    children: 'With Label',
   },
 };
 
@@ -31,4 +31,20 @@ export const Disabled: Story = {
   args: {
     disabled: true,
   },
+};
+
+export const Boxed: Story = {
+  args: {
+    'aria-label': undefined,
+  },
+  render: () => (
+    <div style={{ display: 'flex', width: 310, flexDirection: 'column' }}>
+      <Checkbox name="checkboxBoxed" value="first" variant="boxed">
+        Label 1
+      </Checkbox>
+      <Checkbox defaultChecked name="checkboxBoxed" value="second" variant="boxed">
+        Label 2
+      </Checkbox>
+    </div>
+  ),
 };
