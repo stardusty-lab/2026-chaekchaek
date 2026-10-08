@@ -23,7 +23,7 @@ export const Checked: Story = {
 
 export const WithLabel: Story = {
   args: {
-    children: '책 선택',
+    children: 'With Label',
   },
 };
 
@@ -33,17 +33,33 @@ export const Disabled: Story = {
   },
 };
 
+export const Boxed: Story = {
+  args: {
+    'aria-label': undefined,
+  },
+  render: () => (
+    <div style={{ display: 'flex', width: 310, flexDirection: 'column' }}>
+      <Radio name="radioBoxed" value="want-to-read" variant="boxed">
+        Label1
+      </Radio>
+      <Radio defaultChecked name="radioBoxed" value="reading" variant="boxed">
+        Label2
+      </Radio>
+    </div>
+  ),
+};
+
 export const Group: Story = {
   args: {
     'aria-label': undefined,
   },
   render: () => (
     <div style={{ display: 'flex', gap: 16 }}>
-      <Radio defaultChecked name="book" value="first">
-        첫 번째 책
+      <Radio defaultChecked name="radioGroup" value="first">
+        Label1
       </Radio>
-      <Radio name="book" value="second">
-        두 번째 책
+      <Radio name="radioGroup" value="second">
+        Label2
       </Radio>
     </div>
   ),

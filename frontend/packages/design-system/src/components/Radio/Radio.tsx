@@ -8,11 +8,16 @@ import type { Props } from './Radio.types';
 const classnameDefault = 'ui-Radio';
 
 export const Radio = (props: Props) => {
-  const { children, className, disabled, sx, style, ...restProps } = props;
+  const { children, className, disabled, variant = 'default', sx, style, ...restProps } = props;
+
+  const modifiers = {
+    variant: variant && styles?.[`variant-${variant}`],
+  };
 
   const classname = createClassName({
     styles,
     baseName: classnameDefault,
+    modifiers,
     className,
   });
 
