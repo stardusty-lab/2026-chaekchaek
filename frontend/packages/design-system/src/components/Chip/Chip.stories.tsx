@@ -18,7 +18,7 @@ const meta = {
     },
     variant: {
       control: 'inline-radio',
-      options: ['default', 'primary', 'ghost'],
+      options: ['default', 'primary', 'subtle'],
     },
   },
 } satisfies Meta<typeof Chip>;
@@ -31,66 +31,53 @@ export const Default: Story = {};
 
 export const DefaultVariant: Story = {
   args: {
-    children: 'default',
+    children: 'Default',
     variant: 'default',
   },
 };
 
 export const PrimaryVariant: Story = {
   args: {
-    children: 'primary',
+    children: 'Primary',
     variant: 'primary',
   },
 };
 
-export const GhostVariant: Story = {
+export const SubtleVariant: Story = {
   args: {
-    children: 'ghost',
-    variant: 'ghost',
+    children: 'Subtle',
+    variant: 'subtle',
   },
 };
 
-export const Selected: Story = {
+export const Disabled: Story = {
   args: {
-    children: 'selected',
-    selected: true,
+    children: 'Disabled',
+    disabled: true,
   },
 };
 
 export const SmallSize: Story = {
   args: {
-    children: 'small',
+    children: 'Small',
     size: 'small',
+    variant: 'subtle',
   },
 };
 
 export const MediumSize: Story = {
   args: {
-    children: 'medium',
+    children: 'Medium',
     size: 'medium',
+    variant: 'subtle',
   },
 };
 
 export const LargeSize: Story = {
   args: {
-    children: 'large',
+    children: 'Large',
     size: 'large',
-  },
-};
-
-export const SmallPrimary: Story = {
-  args: {
-    children: 'small primary',
-    size: 'small',
-    variant: 'primary',
-  },
-};
-
-export const LargePrimary: Story = {
-  args: {
-    children: 'large primary',
-    size: 'large',
-    variant: 'primary',
+    variant: 'subtle',
   },
 };
 
@@ -98,5 +85,6 @@ export const AsButton: Story = {
   args: {
     as: 'button',
     children: 'button chip',
+    variant: 'subtle',
   },
 };
