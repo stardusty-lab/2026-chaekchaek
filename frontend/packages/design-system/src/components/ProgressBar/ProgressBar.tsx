@@ -11,9 +11,22 @@ import type { Props } from './';
 const classnameDefault = 'ui-ProgressBar';
 
 export const ProgressBar = <T extends ElementType>(props: Props<T>) => {
-  const { as = 'div', className, value, max, title, label, sx, style, ...restProps } = props;
+  const {
+    as = 'div',
+    className,
+    value,
+    size = 'medium',
+    max,
+    title,
+    label,
+    sx,
+    style,
+    ...restProps
+  } = props;
 
-  const modifiers = {};
+  const modifiers = {
+    size: size && styles[`size-${size}`],
+  };
 
   const classname = createClassName({
     styles,

@@ -14,7 +14,7 @@ const meta = {
   argTypes: {
     line: {
       control: 'select',
-      options: ['outline', 'top', 'top-inset'],
+      options: ['', 'top', 'top-inset'],
     },
     spacing: {
       control: 'select',
@@ -40,13 +40,6 @@ export const Example: Story = {
         <Entry.Extension>Extension</Entry.Extension>
       </>
     ),
-  },
-};
-
-export const LineOutline: Story = {
-  args: {
-    ...Example.args,
-    line: 'outline',
   },
 };
 
@@ -118,38 +111,6 @@ export const ExampleReview: Story = {
             <Shell.Content title="title" content="content" />
           </Shell>
         </Entry.Extension>
-      </>
-    ),
-  },
-};
-
-export const VariantBare: Story = {
-  args: {
-    variant: 'bare',
-    children: (
-      <>
-        <Entry.Main>
-          <Entry.Header>Header</Entry.Header>
-          <Entry.Body>Body</Entry.Body>
-          <Entry.Footer>Footer</Entry.Footer>
-        </Entry.Main>
-        <Entry.Extension>Extension</Entry.Extension>
-      </>
-    ),
-  },
-};
-
-export const VariantSubtle: Story = {
-  args: {
-    variant: 'subtle',
-    children: (
-      <>
-        <Entry.Main>
-          <Entry.Header>Header</Entry.Header>
-          <Entry.Body>Body</Entry.Body>
-          <Entry.Footer>Footer</Entry.Footer>
-        </Entry.Main>
-        <Entry.Extension>Extension</Entry.Extension>
       </>
     ),
   },
