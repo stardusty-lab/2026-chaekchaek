@@ -14,7 +14,7 @@ const meta = {
   argTypes: {
     line: {
       control: 'select',
-      options: ['', 'top', 'top-inset'],
+      options: ['', 'top', 'top-inset', 'bottom', 'bottom-inset'],
     },
     spacing: {
       control: 'select',
@@ -54,6 +54,20 @@ export const LineTopInset: Story = {
   args: {
     ...Example.args,
     line: 'top-inset',
+  },
+};
+
+export const LineBottom: Story = {
+  args: {
+    ...Example.args,
+    line: 'bottom',
+  },
+};
+
+export const LineBottomInset: Story = {
+  args: {
+    ...Example.args,
+    line: 'bottom-inset',
   },
 };
 

@@ -46,3 +46,18 @@ export const XLargeSize: Story = {
     size: 'x-large',
   },
 };
+
+export const Reverse: Story = {
+  args: {
+    img: DummyImg,
+    size: 'medium',
+    reverse: true,
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: 16, backgroundColor: '#191919' }}>
+        <Story />
+      </div>
+    ),
+  ],
+};

@@ -28,8 +28,8 @@
 }
 
 .ui-Pagination-Item.is-active {
-  border-color: var(--chaek-color-surface-action);
-  background-color: var(--chaek-color-surface-action);
+  border-color: var(--chaek-color-surface-accent);
+  background-color: var(--chaek-color-surface-accent);
   color: var(--chaek-color-text-inverse);
 }
 

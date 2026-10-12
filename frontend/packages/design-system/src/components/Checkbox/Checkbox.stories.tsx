@@ -33,18 +33,42 @@ export const Disabled: Story = {
   },
 };
 
+export const Medium: Story = {
+  args: {
+    children: 'Medium',
+    defaultChecked: true,
+    size: 'medium',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Large',
+    defaultChecked: true,
+    size: 'large',
+  },
+};
+
 export const Boxed: Story = {
   args: {
     'aria-label': undefined,
   },
   render: () => (
     <div style={{ display: 'flex', width: 310, flexDirection: 'column' }}>
-      <Checkbox name="checkboxBoxed" value="first" variant="boxed">
+      <Checkbox boxed name="checkboxBoxed" value="first">
         Label 1
       </Checkbox>
-      <Checkbox defaultChecked name="checkboxBoxed" value="second" variant="boxed">
+      <Checkbox boxed defaultChecked name="checkboxBoxed" value="second">
         Label 2
       </Checkbox>
     </div>
   ),
+};
+
+export const Block: Story = {
+  args: {
+    block: true,
+    boxed: true,
+    children: 'Block',
+  },
 };

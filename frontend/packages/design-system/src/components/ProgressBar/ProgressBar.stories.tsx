@@ -14,7 +14,32 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Example: Story = {
   args: {
+    variant: 'default',
     value: 10,
+    max: 100,
+  },
+};
+
+export const Accent: Story = {
+  args: {
+    variant: 'accent',
+    value: 50,
+    max: 100,
+  },
+};
+
+export const Empty: Story = {
+  args: {
+    variant: 'subtle',
+    value: 0,
+    max: 100,
+  },
+};
+
+export const Subtle: Story = {
+  args: {
+    variant: 'subtle',
+    value: 100,
     max: 100,
   },
 };

@@ -1,6 +1,9 @@
 .root {
   --radio-indicator-width: 22px;
   --radio-indicator-height: 22px;
+  --radio-unchecked-size: 14px;
+  --radio-checked-size: 12px;
+  --radio-checked-color: var(--chaek-color-text-primary);
 
   display: inline-flex;
   align-items: center;
@@ -9,7 +12,16 @@
   cursor: pointer;
 }
 
-.variant-boxed {
+.variant-accent {
+  --radio-checked-color: var(--chaek-color-text-accent);
+}
+
+.size-large {
+  --radio-unchecked-size: 22px;
+  --radio-checked-size: 22px;
+}
+
+.is-boxed {
   --radio-indicator-width: 24px;
   --radio-indicator-height: 30px;
 
@@ -26,8 +38,12 @@
   letter-spacing: -0.150390625px;
 }
 
-.variant-boxed + .variant-boxed {
+.is-boxed + .is-boxed {
   margin-top: 16px;
+}
+
+.is-block {
+  display: flex;
 }
 
 .input {
@@ -56,18 +72,18 @@
 
 .input:not(:checked) + .indicator::before {
   box-sizing: border-box;
-  width: 14px;
-  height: 14px;
+  width: var(--radio-unchecked-size);
+  height: var(--radio-unchecked-size);
   border: 1px solid var(--chaek-color-text-secondary);
   border-radius: 50%;
   content: '';
 }
 
-.input:checked + .indicator::after {
-  width: 12px;
-  height: 12px;
+.input:checked + .indicator::before {
+  width: var(--radio-checked-size);
+  height: var(--radio-checked-size);
   border-radius: 50%;
-  background-color: var(--chaek-color-text-accent);
+  background-color: var(--radio-checked-color);
   content: '';
 }
 

@@ -57,7 +57,6 @@
   overflow: hidden;
   flex-shrink: 0;
   border-radius: 2px;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 14%);
 }
 
 .ui-List-Item-Content {
@@ -65,7 +64,6 @@
   flex: 1;
   min-width: 0;
   flex-direction: column;
-  align-items: flex-start;
   gap: 5px;
   text-decoration: none;
   color: inherit;
@@ -100,6 +98,7 @@
 }
 
 .ui-List-Item-Content .description {
+  padding-top: 4px;
   font-size: 0.75rem; /* 12px */
   color: #888888;
 }

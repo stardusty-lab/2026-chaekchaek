@@ -16,6 +16,7 @@ export const ProgressBar = <T extends ElementType>(props: Props<T>) => {
     className,
     value,
     size = 'medium',
+    variant = 'default',
     max,
     title,
     label,
@@ -26,6 +27,7 @@ export const ProgressBar = <T extends ElementType>(props: Props<T>) => {
 
   const modifiers = {
     size: size && styles[`size-${size}`],
+    variant: styles[`variant-${variant}`],
   };
 
   const classname = createClassName({
