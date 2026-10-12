@@ -7,6 +7,7 @@ export type AS = 'div';
 export type OwnProps = {
   img: string;
   size?: 'x-small' | 'small' | 'medium' | 'large' | 'x-large';
+  reverse?: boolean;
 };
 
 export type Props<T extends ElementType = AS> = PolymorphicProps<T, OwnProps>;
