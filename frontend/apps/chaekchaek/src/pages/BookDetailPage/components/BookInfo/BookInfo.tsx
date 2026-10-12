@@ -103,6 +103,7 @@ export const BookInfo = ({
         </Title>
         <ProgressBar
           sx={{ mt: 6 }}
+          variant={readPageCount !== bookPageCount ? 'accent' : 'subtle'}
           value={readPageCount}
           max={bookPageCount}
           title={`${readPageCount} / ${bookPageCount}쪽`}

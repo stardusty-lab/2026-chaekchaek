@@ -429,7 +429,11 @@ export const LibraryPage = () => {
                         description={
                           <>
                             {item.totalPages > 0 && (
-                              <ProgressBar value={item.currentPage} max={item.totalPages} />
+                              <ProgressBar
+                                variant={item.currentPage !== item.totalPages ? 'accent' : 'subtle'}
+                                value={item.currentPage}
+                                max={item.totalPages}
+                              />
                             )}
                           </>
                         }
