@@ -1,4 +1,7 @@
 .ui-ProgressBar {
+  --progress-bar-track-color: var(--chaek-color-surface-progress-track-detail);
+  --progress-bar-indicator-color: #1a1a1a;
+
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -10,13 +13,28 @@
   height: 4px;
   overflow: hidden;
   border-radius: 4px;
-  background-color: var(--chaek-color-surface-progress-track-detail);
+  background-color: var(--progress-bar-track-color);
 }
 
 .bar {
   width: 2px;
   height: 100%;
-  background-color: var(--chaek-color-surface-accent);
+  background-color: var(--progress-bar-indicator-color);
+}
+
+.variant-default {
+  --progress-bar-track-color: var(--chaek-color-surface-progress-track-detail);
+  --progress-bar-indicator-color: #1a1a1a;
+}
+
+.variant-accent {
+  --progress-bar-track-color: var(--chaek-color-surface-progress-track);
+  --progress-bar-indicator-color: var(--chaek-color-surface-accent);
+}
+
+.variant-subtle {
+  --progress-bar-track-color: var(--chaek-color-surface-progress-track);
+  --progress-bar-indicator-color: #b1b1b7;
 }
 
 .header {
@@ -37,7 +55,6 @@
 
 .ui-ProgressBar:has(.title) .box {
   height: 6px;
-  background-color: #e8e2d9;
 }
 
 .title {
