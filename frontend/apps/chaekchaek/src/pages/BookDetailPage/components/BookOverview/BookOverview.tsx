@@ -18,6 +18,7 @@ export const BookOverview = ({
 
   return (
     <Overview>
+      <Overview.Media>{coverImageUrl && <ImgBox img={coverImageUrl} />}</Overview.Media>
       <Overview.Content
         leading={`ARCHIVE / ${formattedCategory} / ${publishedDate}`}
         title={title}
@@ -34,7 +35,6 @@ export const BookOverview = ({
           </>
         }
       />
-      <Overview.Media>{coverImageUrl && <ImgBox img={coverImageUrl} />}</Overview.Media>
     </Overview>
   );
 };
