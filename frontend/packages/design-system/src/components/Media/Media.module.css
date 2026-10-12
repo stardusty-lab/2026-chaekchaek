@@ -1,5 +1,5 @@
 .ui-Media {
-  display: inline-flex;
+  display: flex;
   box-sizing: border-box;
   flex-direction: column;
   flex-shrink: 0;
@@ -29,7 +29,8 @@
   font-family: var(--chaek-font-family-gowun-dodum);
   font-weight: 400;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  word-break: keep-all;
   text-align: center;
 }
 
