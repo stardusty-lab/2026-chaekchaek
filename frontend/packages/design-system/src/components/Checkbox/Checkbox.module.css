@@ -49,6 +49,10 @@
   margin-top: 16px;
 }
 
+.is-block {
+  display: flex;
+}
+
 .input {
   position: absolute;
   width: 1px;

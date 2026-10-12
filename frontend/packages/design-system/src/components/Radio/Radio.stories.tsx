@@ -72,3 +72,11 @@ export const Boxed: Story = {
     </div>
   ),
 };
+
+export const Block: Story = {
+  args: {
+    block: true,
+    boxed: true,
+    children: 'Block',
+  },
+};

@@ -15,6 +15,7 @@ export const Radio = (props: Props) => {
     variant = 'default',
     size = 'medium',
     boxed = false,
+    block = false,
     sx,
     style,
     ...restProps
@@ -24,6 +25,7 @@ export const Radio = (props: Props) => {
     variant: variant && styles?.[`variant-${variant}`],
     size: size && styles?.[`size-${size}`],
     boxed: boxed && styles?.[`is-boxed`],
+    block: block && styles?.[`is-block`],
   };
 
   const classname = createClassName({

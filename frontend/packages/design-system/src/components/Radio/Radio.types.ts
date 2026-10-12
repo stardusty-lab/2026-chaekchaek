@@ -6,5 +6,6 @@ export type Props = Omit<ComponentPropsWithoutRef<'input'>, 'children' | 'size' 
   variant?: 'default' | 'accent';
   size?: 'medium' | 'large';
   boxed?: boolean;
+  block?: boolean;
   children?: ReactNode;
 } & SpacingType;
