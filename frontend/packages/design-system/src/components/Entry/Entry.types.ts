@@ -6,7 +6,7 @@ export type AS = 'div';
 
 export type OwnProps = {
   reverse?: boolean;
-  line?: 'top' | 'top-inset';
+  line?: 'top' | 'top-inset' | 'bottom' | 'bottom-inset';
   spacing?: 'medium' | 'large';
 };
 
