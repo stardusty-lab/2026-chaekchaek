@@ -6,6 +6,7 @@
 }
 
 .wrap {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,6 +53,9 @@
 }
 
 .frame-Header-Nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 40px;
