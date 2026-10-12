@@ -23,7 +23,7 @@ const meta = {
     },
     size: {
       control: 'inline-radio',
-      options: ['small', 'medium', 'large'],
+      options: ['x-small', 'small', 'medium', 'large'],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -80,6 +80,14 @@ export const DangerWeakVariant: Story = {
   args: {
     children: 'danger-weak',
     variant: 'danger-weak',
+  },
+};
+
+export const XSmallSize: Story = {
+  args: {
+    children: 'x-small',
+    size: 'x-small',
+    variant: 'primary',
   },
 };
 
