@@ -11,6 +11,7 @@ const meta = {
     shape: 'default',
     variant: 'default',
     size: 'medium',
+    align: 'center',
   },
   argTypes: {
     shape: {
@@ -24,6 +25,10 @@ const meta = {
     size: {
       control: 'inline-radio',
       options: ['x-small', 'small', 'medium', 'large'],
+    },
+    align: {
+      control: 'inline-radio',
+      options: ['center', 'left', 'right'],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -112,6 +117,22 @@ export const LargeSize: Story = {
     children: 'large',
     size: 'large',
     variant: 'primary',
+  },
+};
+
+export const LeftAlign: Story = {
+  args: {
+    align: 'left',
+    block: true,
+    children: 'Left aligned button',
+  },
+};
+
+export const RightAlign: Story = {
+  args: {
+    align: 'right',
+    block: true,
+    children: 'Right aligned button',
   },
 };
 
