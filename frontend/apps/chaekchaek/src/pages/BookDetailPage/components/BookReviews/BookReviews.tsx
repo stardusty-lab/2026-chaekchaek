@@ -111,16 +111,19 @@ export const BookReviews = ({
             />
           );
         })}
-      <Field sx={{ mt: 4, mb: 6 }}>
-        <Field.Content
-          onClick={() => {
-            handleOpenDialog('WriteReviewDialog');
-          }}
-        >
-          <Input />
-          <Button variant="primary">남기기</Button>
-        </Field.Content>
-      </Field>
+      {!!(Number(reviews?.length) >= 2) && (
+        <Field sx={{ mt: 4, mb: 6 }}>
+          <Field.Content
+            onClick={() => {
+              handleOpenDialog('WriteReviewDialog');
+            }}
+          >
+            <Input />
+            <Button variant="primary">남기기</Button>
+          </Field.Content>
+        </Field>
+      )}
+
       {dialogElement}
     </>
   );
