@@ -18,7 +18,7 @@ const meta = {
     },
     variant: {
       control: 'inline-radio',
-      options: ['default', 'primary', 'subtle', 'ghost'],
+      options: ['default', 'primary', 'subtle', 'ghost', 'soft'],
     },
   },
 } satisfies Meta<typeof Chip>;
@@ -54,6 +54,13 @@ export const GhostVariant: Story = {
   args: {
     children: '댓글 46',
     variant: 'ghost',
+  },
+};
+
+export const SoftVariant: Story = {
+  args: {
+    children: '다 읽음',
+    variant: 'soft',
   },
 };
 

@@ -30,6 +30,12 @@
   --chip-color: var(--chaek-color-text-primary);
 }
 
+.variant-soft {
+  --chip-background: var(--chaek-color-surface-subtle);
+  --chip-border-color: var(--chaek-color-surface-subtle);
+  --chip-color: #ff8d28;
+}
+
 .variant-primary {
   --chip-background: var(--chaek-color-surface-inverse);
   --chip-border-color: var(--chaek-color-surface-inverse);
