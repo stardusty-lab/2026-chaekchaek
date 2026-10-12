@@ -101,3 +101,30 @@
   width: 19px;
   height: 23px;
 }
+
+.frame-Header.is-reverse {
+  background: #090a0c;
+  border-bottom-color: #333333;
+}
+
+.frame-Header.is-reverse .frame-Header-Logo .text {
+  color: var(--chaek-color-text-inverse, #ffffff);
+}
+
+.frame-Header.is-reverse .frame-Header-Nav a {
+  color: var(--chaek-color-text-source-bdbdbd, #bdbdbd);
+}
+
+.frame-Header.is-reverse .frame-Header-Nav a.is-active {
+  color: var(--chaek-color-text-inverse, #ffffff);
+  border-bottom-color: var(--chaek-color-border-source-ffffff, #ffffff);
+}
+
+.frame-Header.is-reverse .frame-Header-ProfileButton {
+  border-color: var(--chaek-color-border-source-ffffff, #ffffff);
+  background: transparent;
+}
+
+.frame-Header.is-reverse .frame-Header-ProfileButton img {
+  filter: invert(1);
+}
