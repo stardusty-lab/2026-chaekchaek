@@ -26,10 +26,8 @@ export const BookOverview = ({
         description={description}
         meta={
           <>
-            <Badge variant="ghost" reverse>
-              ★ {averageRating || 0}
-            </Badge>
-            <Badge variant="ghost" reverse>
+            <Badge variant="ghost">★ {averageRating || 0}</Badge>
+            <Badge variant="ghost">
               감상 {reviewCount || 0} · 답글: {replyCount}
             </Badge>
           </>
