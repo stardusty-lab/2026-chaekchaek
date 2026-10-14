@@ -93,6 +93,22 @@ export const BookReviews = ({
         onChange={onFeedChange}
       />
 
+      <Button
+        variant="primary"
+        block
+        align="left"
+        sx={{ mb: 4 }}
+        leading="✎"
+        onClick={() => {
+          handleOpenDialog('WriteReviewDialog');
+        }}
+      >
+        이 순간의 감상 남기기{' '}
+        <Text color="accent" sx={{ ml: 2 }}>
+          ↗
+        </Text>
+      </Button>
+
       {reviews
         ?.filter((review) => !review.deleted)
         .map((review) => {
@@ -105,22 +121,6 @@ export const BookReviews = ({
             />
           );
         })}
-
-      <Button
-        variant="primary"
-        block
-        align="left"
-        sx={{ mt: 4 }}
-        leading="✎"
-        onClick={() => {
-          handleOpenDialog('WriteReviewDialog');
-        }}
-      >
-        이 순간의 감상 남기기{' '}
-        <Text color="accent" sx={{ ml: 2 }}>
-          ↗
-        </Text>
-      </Button>
 
       {dialogElement}
     </>
